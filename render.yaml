@@ -1,7 +1,7 @@
 databases:
-  - name: VardaiN_db
+  - name: postgres
     plan: free
-    databaseName: VardaiN_db
+    databaseName: postgres
     user: jitesh_chauhan
 
 services:

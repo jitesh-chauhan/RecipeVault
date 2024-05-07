@@ -1,0 +1,22 @@
+databases:
+  - name: VardaiN_db
+    plan: free
+    databaseName: VardaiN_db
+    user: jitesh_chauhan
+
+services:
+  - type: web
+    plan: free
+    name: RecipeVault
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "python -m gunicorn RecipeVault.asgi:application -k uvicorn.workers.UvicornWorker"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: postgres
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4

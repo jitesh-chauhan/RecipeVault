@@ -99,28 +99,28 @@ WSGI_APPLICATION = 'RecipeVault.wsgi.application'
 # }
 # mongodb+srv://<username>:<password>@cluster0.zmfm3x2.mongodb.net/
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        "CLIENT": {
-           "name": "VardaiN_db",
-           "host":  "mongodb+srv://jitesh_chauhan:VardaiN@cluster0.zmfm3x2.mongodb.net/",
-           "username": "jitesh_chauhan",
-           "password": "VardaiN",
-           "authMechanism": "SCRAM-SHA-1",
-        }, 
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         "CLIENT": {
+#            "name": "VardaiN_db",
+#            "host":  "mongodb+srv://jitesh_chauhan:VardaiN@cluster0.zmfm3x2.mongodb.net/",
+#            "username": "jitesh_chauhan",
+#            "password": "VardaiN",
+#            "authMechanism": "SCRAM-SHA-1",
+#         }, 
+#     }
+# }
 
 # Replace the SQLite DATABASES configuration with PostgreSQL:
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         # Replace this value with your local database's connection string.
+DATABASES = {
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
         
-#         default='postgresql://django_postgres:VardaiN@localhost:5432/postgres/RecipeVault',
-#         conn_max_age=600
-#     )
-# }
+        default='postgresql://postgres:VardaiN@localhost:5432/postgres',
+        conn_max_age=600
+    )
+}
 
 # DATABASES = {
 #     'default': dj_database_url.config(
@@ -130,6 +130,18 @@ DATABASES = {
 #         'PASSWORD': 'VardaiN',
 #         'HOST': 'localhost',
 #         'PORT': '5432'
+#     )
+# }
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgresql://postgres:VardaiN@localhost:5432/postgres',
+#         engine='django.db.backends.postgresql',
+#         host='localhost',
+#         port='5432',
+#         name='postgres',
+#         user='postgres',
+#         password='VardaiN',
+#         connect_timeout=10
 #     )
 # }
 

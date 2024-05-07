@@ -1,8 +1,8 @@
 databases:
   - name: postgres
     plan: free
-    databaseName: postgres
-    user: jitesh_chauhan
+    databaseName: postgres-db1
+    user: postgres
 
 services:
   - type: web
